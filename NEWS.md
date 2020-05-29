@@ -1,3 +1,7 @@
+# oro.nifti 0.10.3
+
+* Fixing when there are any `NA` values.
+
 # oro.nifti 0.10.1
 
 * Added an `origin` accessor for `nifti` objects.

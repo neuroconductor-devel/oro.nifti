@@ -6,19 +6,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Working with the NIfTI Data Standard in \proglang{R},Working with the NIfTI Data Standard in R,NIfTI and R • oro.nifti</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Working with the NIfTI Data Standard in \proglang{R},Working with the NIfTI Data Standard in R,NIfTI and R">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="oro.nifti">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">oro.nifti</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.10.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.10.3</span>
       </span>
     </div>
 
@@ -62,7 +62,14 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/bjw34032/oro.nifti/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -72,17 +79,18 @@
 
       
 
-      </header><script src="nifti2_files/header-attrs-2.0.7/header-attrs.js"></script><div class="row">
+      </header><script src="nifti2_files/header-attrs-2.1.3/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>true</h1>
+      <h1 data-toc-skip>true</h1>
                         <h4 class="author">Brandon Whitcher</h4>
             <address class="author_afil">
       Pfizer Worldwide R&amp;D<br><h4 class="author">Volker J. Schmid</h4>
             <address class="author_afil">
       Ludwig-Maximilians Universit"at M"unchen<br><h4 class="author">Andrew Thornton</h4>
             <address class="author_afil">
-      Cardiff University<br><div class="hidden name"><code>nifti2.Rmd</code></div>
+      Cardiff University<br><small class="dont-index">Source: <a href="https://github.com/bjw34032/oro.nifti/blob/master/vignettes/nifti2.Rmd"><code>vignettes/nifti2.Rmd</code></a></small>
+      <div class="hidden name"><code>nifti2.Rmd</code></div>
 
     </address>
 </address>
@@ -95,7 +103,7 @@
       <p>The package  facilitates the interaction with and manipulation of medical imaging data that conform to the ANALYZE, NIfTI and AFNI formats. The 4 class framework is used to develop basic ANALYZE and NIfTI classes, where NIfTI extensions may be used to extend the fixed-byte NIfTI header. One example of this, that has been implemented, is an -based “audit trail” tracking the history of operations applied to a data set. The conversion from DICOM to ANALYZE/NIfTI is straightforward using the capabilities of . The 4 classes have been developed to provide a user-friendly interface to the ANALYZE/NIfTI data formats; allowing easy data input, data output, image processing and visualization.</p>
     </div>
     
-<pre><code>## oro.nifti 0.10.1</code></pre>
+<pre><code>## oro.nifti 0.10.3</code></pre>
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
@@ -107,8 +115,8 @@ Although the industry standard for medical imaging data is DICOM, another format
 <p>There are several  packages that also offer input/output functionality for the NIfTI and ANALYZE data formats in addition to image analysis capabilities for specific MRI acquisition sequences; e.g.,  ,   and  . The  package provides access to NIfTI data via the  library .</p>
 <p>The NIfTI header inherits its structure (348 bytes in length) from the ANALYZE data format. The last four bytes in the NIfTI header correspond to the “magic” field and denote whether or not the header and image are contained in a single file () or two separate files (), the latter being identical to the structure of the ANALYZE data format. The NIfTI data format added an additional four bytes to allow for “extensions” to the header. By default these four bytes are set to zero.</p>
 <p>The first example of reading in, and displaying, medical imaging data in NIfTI format  was obtained from the NIfTI website (). Successful execution of the commands</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>fname &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="st">"nifti"</span>, <span class="st">"mniLR.nii.gz"</span>), <span class="dt">package=</span><span class="st">"oro.nifti"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a>(mniLR &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read_nifti.html">readNIfTI</a></span>(fname))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">fname</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="st">"nifti"</span>, <span class="st">"mniLR.nii.gz"</span>), <span class="kw">package</span><span class="kw">=</span><span class="st">"oro.nifti"</span>)
+(<span class="no">mniLR</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read_nifti.html">readNIfTI</a></span>(<span class="no">fname</span>))</pre></body></html></div>
 <pre><code>## NIfTI-1 format
 ##   Type            : nifti
 ##   Data Type       : 2 (UINT8)
@@ -121,20 +129,20 @@ Although the industry standard for medical imaging data is DICOM, another format
 ##   Pixel Dimension : 2 x 2 x 2
 ##   Voxel Units     : mm
 ##   Time Units      : sec</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw"><a href="../reference/pixdim-methods.html">pixdim</a></span>(mniLR)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/pixdim-methods.html">pixdim</a></span>(<span class="no">mniLR</span>)</pre></body></html></div>
 <pre><code>## [1] 0 2 2 2 1 1 1 1</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw"><a href="../reference/descrip-methods.html">descrip</a></span>(mniLR)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="../reference/descrip-methods.html">descrip</a></span>(<span class="no">mniLR</span>)</pre></body></html></div>
 <pre><code>## [1] "FSL3.2beta"</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw"><a href="../reference/aux_file-methods.html">aux.file</a></span>(mniLR)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="../reference/aux_file-methods.html">aux.file</a></span>(<span class="no">mniLR</span>)</pre></body></html></div>
 <pre><code>## [1] "none                   "</code></pre>
 <p>produces an 4  object (or  if the audit trail option is set). Some accessor functions are also provided; e.g.,  and . The former is used to access the original name of the file (if it has been provided) and the latter is the name of a valid NIfTI header field used to hold a “description” (up to 80 characters in length).</p>
 <p>Image information begins at the byte position determined by the  slot. In a single NIfTI file (), this is by default after the first 352 bytes. Header extensions extend the size of the header and come before the image information leading to a consequent increase of  for single NIfTI files. The split NIfTI () and ANALYZE formats contain pairs of files, where the header and image information are separated, and do not have this problem. In this case  is set to 0.</p>
 <p>The  function has been overloaded so that it behaves differently when dealing with medical image objects ( and ). The command</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw"><a href="https://rdrr.io/r/graphics/image.html">image</a></span>(mniLR)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/image.html">image</a></span>(<span class="no">mniLR</span>)</pre></body></html></div>
 <p>produces a three-dimensional array of the MNI brain, with the default NIfTI axes, and is displayed on a <span class="math inline">\(10{\times}10\)</span> grid of images (Figure a). The  function for medical image 4 objects is an attempt to balance minimal user input with enough flexibility to customize the display when necessary. For example, single slices may be viewed by using the option  in conjunction with the option  to specify the slice.</p>
 <p>The second example of reading in and displaying medical imaging data in the NIfTI format  was also obtained from the NIfTI website (). Successful execution of the commands</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>fname &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="st">"nifti"</span>, <span class="st">"mniRL.nii.gz"</span>), <span class="dt">package=</span><span class="st">"oro.nifti"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a>(mniRL &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read_nifti.html">readNIfTI</a></span>(fname))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">fname</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="st">"nifti"</span>, <span class="st">"mniRL.nii.gz"</span>), <span class="kw">package</span><span class="kw">=</span><span class="st">"oro.nifti"</span>)
+(<span class="no">mniRL</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read_nifti.html">readNIfTI</a></span>(<span class="no">fname</span>))</pre></body></html></div>
 <pre><code>## NIfTI-1 format
 ##   Type            : nifti
 ##   Data Type       : 2 (UINT8)
@@ -147,15 +155,15 @@ Although the industry standard for medical imaging data is DICOM, another format
 ##   Pixel Dimension : 2 x 2 x 2
 ##   Voxel Units     : mm
 ##   Time Units      : sec</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw"><a href="https://rdrr.io/r/graphics/image.html">image</a></span>(mniRL)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/image.html">image</a></span>(<span class="no">mniRL</span>)</pre></body></html></div>
 <p>produces a three-dimensional array of the MNI brain that is displayed in a <span class="math inline">\(10{\times}10\)</span> grid of images (Figure b). The two sets of data in Figure  are stored in two different orientations, commonly referred to as the  and  conventions. The neurological convention is where “right is right” and one is essentially looking through the subject. The radiological convention is where “right is left” and one is looking at the subject.</p>
 <p>An additional graphical display function has been added for  and  objects that allows a so-called orthographic visualization of the data.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw"><a href="../reference/orthographic-methods.html">orthographic</a></span>(mniRL)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="fu"><a href="../reference/orthographic-methods.html">orthographic</a></span>(<span class="no">mniRL</span>)</pre></body></html></div>
 <p>As seen in Figure  the mid-axial, mid-sagittal and mid-coronal planes are displayed by default. The slices used may be set using , where <span class="math inline">\((I,J,K)\)</span> are appropriate indices, and the crosshairs will provide a spatial reference in each plane relative to the other two.</p>
 <p>The NIfTI format contains an implicit generalized spatial transformation from the data co-ordinate system <span class="math inline">\((i,j,k)\)</span> into a real-space “right-handed” co-ordinate system. In this real-space system, the <span class="math inline">\((x,y,z)\)</span> axes are  set such that <span class="math inline">\(x\)</span> increases from left to right, <span class="math inline">\(y\)</span> increases from posterior to anterior and <span class="math inline">\(z\)</span> increases from inferior to superior.</p>
 <p>At this point in time the  package cannot apply an arbitrary transform to the imaging data into <span class="math inline">\((x,y,z)\)</span> space – such a transform may require non-integral indices and interpolation steps. The package does accommodate straightforward transformations of imaging data; e.g., setting the <span class="math inline">\(i\)</span>-axis to increase from right to left (the neurological convention). Future versions of  will attempt to address more complicated spatial transformations and provide functionality to display the <span class="math inline">\((x,y,z)\)</span> axes on orthographic plots.</p>
 <p>A major improvement in the  package is the fact that standard medical imaging formats are stored in unique classes under the 4 system . Essentially, NIfTI and ANALYZE data are stored as multi-dimensional arrays with extra slots created that capture the format-specific header information; e.g., for a  object</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">slotNames</span>(mniRL)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu">slotNames</span>(<span class="no">mniRL</span>)</pre></body></html></div>
 <pre><code>##  [1] ".Data"          "sizeof_hdr"     "data_type"     
 ##  [4] "db_name"        "extents"        "session_error" 
 ##  [7] "regular"        "dim_info"       "dim_"          
@@ -172,19 +180,19 @@ Although the industry standard for medical imaging data is DICOM, another format
 ## [40] "srow_x"         "srow_y"         "srow_z"        
 ## [43] "intent_name"    "magic"          "extender"      
 ## [46] "reoriented"</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw"><a href="../reference/cal_min-methods.html">cal.min</a></span>(mniRL), <span class="kw"><a href="../reference/cal_max-methods.html">cal.max</a></span>(mniRL))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fu"><a href="../reference/cal_min-methods.html">cal.min</a></span>(<span class="no">mniRL</span>), <span class="fu"><a href="../reference/cal_max-methods.html">cal.max</a></span>(<span class="no">mniRL</span>))</pre></body></html></div>
 <pre><code>## [1]   0 255</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw"><a href="https://rdrr.io/r/base/range.html">range</a></span>(mniRL)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span>(<span class="no">mniRL</span>)</pre></body></html></div>
 <pre><code>## [1]   0 255</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>mniRL<span class="op">@</span><span class="st">"datatype"</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="no">mniRL</span>@<span class="st">"datatype"</span></pre></body></html></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw"><a href="../reference/convert_nifti.html">convert.datatype</a></span>(mniRL<span class="op">@</span><span class="st">"datatype"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="fu"><a href="../reference/convert_nifti.html">convert.datatype</a></span>(<span class="no">mniRL</span>@<span class="st">"datatype"</span>)</pre></body></html></div>
 <pre><code>## [1] "UINT8"</code></pre>
 <p>Note, an ANALYZE object has a slightly different set of slots. Slots 4–47 are taken verbatim from the definition of the NIfTI format and are read directly from a file. The slot  is the multidimensional array (since class  inherits from class ) and the slots ,  and  are used for internal bookkeeping. In the code above we have accessed the min/max values of the imaging data using the  and  accessor functions which matches a direct interrogation of the  slot using the  function. Looking at the  slot provides a numeric code that may be converted into a value that indicates the type of byte structure used (in this case an 8-bit or 1-byte unsigned integer).</p>
 <p>As introduced in Section~ there are currently only two accessor functions to slots in the NIfTI header ( and ) – all other slots are either ignored or used inside of functions that operate on ANALYZE/NIfTI objects. The NIfTI class also has the ability to read and write extensions that conform to the NIfTI data format. Customized printing and validity-checking functions are available to the user and every attempt has been made to ensure that the information from the multi-dimensional array is in agreement with the header values.</p>
 <p>The constructor function  produces valid NIfTI objects, including a consistent header, from an arbitrary array.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>n &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>(random.image &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nifti.html">nifti</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/array.html">array</a></span>(<span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(n<span class="op">*</span>n), <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(n,n,<span class="dv">1</span>))))</span></code></pre></div>
+<div class="sourceCode" id="cb25"><html><body><pre class="r"><span class="no">n</span> <span class="kw">&lt;-</span> <span class="fl">100</span>
+(<span class="no">random.image</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nifti.html">nifti</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/array.html">array</a></span>(<span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="no">n</span>*<span class="no">n</span>), <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="no">n</span>,<span class="no">n</span>,<span class="fl">1</span>))))</pre></body></html></div>
 <pre><code>## NIfTI-1 format
 ##   Type            : nifti
 ##   Data Type       : 2 (UINT8)
@@ -197,30 +205,30 @@ Although the industry standard for medical imaging data is DICOM, another format
 ##   Pixel Dimension : 1 x 1 x 1
 ##   Voxel Units     : Unknown
 ##   Time Units      : Unknown</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>random.image<span class="op">@</span><span class="st">"dim_"</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><html><body><pre class="r"><span class="no">random.image</span>@<span class="st">"dim_"</span></pre></body></html></div>
 <pre><code>## [1]   3 100 100   1   1   1   1   1</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(random.image)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(<span class="no">random.image</span>)</pre></body></html></div>
 <pre><code>## [1] 100 100   1</code></pre>
 <p>The function  outputs valid NIfTI class files, which can be opened in other medical imaging software. Files can either be stored as standard  files or compressed with gnuzip (default).</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw"><a href="../reference/write_nifti.html">writeNIfTI</a></span>(random.image, <span class="st">"random"</span>)</span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="kw"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span>(<span class="dt">pattern=</span><span class="st">"random"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><html><body><pre class="r"><span class="fu"><a href="../reference/write_nifti.html">writeNIfTI</a></span>(<span class="no">random.image</span>, <span class="st">"random"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span>(<span class="kw">pattern</span><span class="kw">=</span><span class="st">"random"</span>)</pre></body></html></div>
 <pre><code>## [1] "random.nii.gz"</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>Following on from the 4 implementation of both the NIfTI and ANALYZE data formats, the ability to extend the NIfTI data format header is utilized in the  package. Please use the command</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="dt">niftiAuditTrail=</span><span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">niftiAuditTrail</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
 <p>to turn on the “audit trail” option in  and then execute the function . With the option enabled extensions are properly handled when reading and writing NIfTI data, users are allowed to add extensions to newly-created NIfTI objects by casting them as  objects and adding  objects to the  slot, and all operations that are performed on a NIfTI object will generate what we call an  that consists of an -based log .</p>
 <p>Figure  displays output from the accessor function , the -based audit trail that is stored as a NIfTI header extension.</p>
 <p>Each log entry contains information not only about the function applied to the NIfTI object, but also various system-level information; e.g., version of , user name, date, time, etc. When writing NIfTI-class objects to disk, the -based NIfTI extension is converted into plain text and saved using  to denote plain ASCII text. The user may control the tracking of data manipulation via the audit trail using the global option .</p>
 <p>Basic visualization of  and  class images can be achieved with any visualization for arrays in . For example, the  package provides functions  and  for visualization . Please note that functions in  expect grey-scale values in the range <span class="math inline">\([0,1]\)</span>, hence the display of  data may be performed using</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>mniLR.range &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/range.html">range</a></span>(mniLR)</span>
-<span id="cb35-2"><a href="#cb35-2"></a>EBImage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/EBImage/man/display.html">display</a></span>((mniLR <span class="op">-</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(mniLR)) <span class="op">/</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/diff.html">diff</a></span>(mniLR.range))</span></code></pre></div>
+<div class="sourceCode" id="cb35"><html><body><pre class="r"><span class="no">mniLR.range</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span>(<span class="no">mniLR</span>)
+<span class="kw pkg">EBImage</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/EBImage/man/display.html">display</a></span>((<span class="no">mniLR</span> - <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">mniLR</span>)) / <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span>(<span class="no">mniLR.range</span>))</pre></body></html></div>
 Interactive visualization of multi-dimensional arrays, stored in NIfTI or ANALYZE format, is however best performed outside of  at this point in time. Popular viewers, especially for neuroimaging data, include
 <p>The  package provides basic interactive visualization of ANALYZE/NIfTI data using a / interface .</p>
 <p>This is an example of reading in, and displaying, a four-dimensional medical imaging data set in NIfTI format  obtained from the  evaluation and example data suite (). Successful execution of the commands</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>filtered.func.data &lt;-<span class="st"> </span></span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="st">"nifti"</span>, <span class="st">"filtered_func_data.nii.gz"</span>), </span>
-<span id="cb36-3"><a href="#cb36-3"></a>              <span class="dt">package=</span><span class="st">"oro.nifti"</span>)</span>
-<span id="cb36-4"><a href="#cb36-4"></a>(ffd &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read_nifti.html">readNIfTI</a></span>(filtered.func.data))</span></code></pre></div>
+<div class="sourceCode" id="cb36"><html><body><pre class="r"><span class="no">filtered.func.data</span> <span class="kw">&lt;-</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="st">"nifti"</span>, <span class="st">"filtered_func_data.nii.gz"</span>),
+              <span class="kw">package</span><span class="kw">=</span><span class="st">"oro.nifti"</span>)
+(<span class="no">ffd</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read_nifti.html">readNIfTI</a></span>(<span class="no">filtered.func.data</span>))</pre></body></html></div>
 <pre><code>## NIfTI-1 format
 ##   Type            : niftiExtension
 ##   Data Type       : 4 (INT16)
@@ -233,52 +241,52 @@ Interactive visualization of multi-dimensional arrays, stored in NIfTI or ANALYZ
 ##   Pixel Dimension : 1 x 1 x 1 x 1
 ##   Voxel Units     : Unknown
 ##   Time Units      : Unknown</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw"><a href="https://rdrr.io/r/graphics/image.html">image</a></span>(ffd, <span class="dt">zlim=</span><span class="kw"><a href="https://rdrr.io/r/base/range.html">range</a></span>(ffd)<span class="op">*</span><span class="fl">0.95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/image.html">image</a></span>(<span class="no">ffd</span>, <span class="kw">zlim</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span>(<span class="no">ffd</span>)*<span class="fl">0.95</span>)</pre></body></html></div>
 <p>produces a four-dimensional (4D) array of imaging data that may be displayed in a <span class="math inline">\(5{\times}5\)</span> grid of images (Figure a). The first three dimensions are spatial locations of the voxel (volume element) and the fourth dimension is time for this functional MRI (fMRI) acquisition. As seen from the summary of object, there are 21 axial slices of fairly coarse resolution (<span class="math inline">\(4{\times}4{\times}6\;\text{mm}\)</span>) and reasonable temporal resolution (<span class="math inline">\(3\;\text{s}\)</span>). Figure b depicts the orthographic display of the  using the axial plane containing the left-and-right thalamus to approximately center the crosshair vertically.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="kw"><a href="../reference/orthographic-methods.html">orthographic</a></span>(ffd, <span class="dt">xyz=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">34</span>,<span class="dv">29</span>,<span class="dv">10</span>), <span class="dt">zlim=</span><span class="kw"><a href="https://rdrr.io/r/base/range.html">range</a></span>(ffd)<span class="op">*</span><span class="fl">0.9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><html><body><pre class="r"><span class="fu"><a href="../reference/orthographic-methods.html">orthographic</a></span>(<span class="no">ffd</span>, <span class="kw">xyz</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">34</span>,<span class="fl">29</span>,<span class="fl">10</span>), <span class="kw">zlim</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span>(<span class="no">ffd</span>)*<span class="fl">0.9</span>)</pre></body></html></div>
 <p>The  programming environment provides a wide variety of statistical methodology for the quantitative analysis of medical imaging data. For example, functional MRI (fMRI) data are typically analyzed by applying a multiple linear regression model, commonly referred to in the literature as a general linear model (GLM), that utilizes the stimulus experiment to construct the design matrix. Estimation of the regression coefficients in the GLM produces a statistical image; e.g., <span class="math inline">\(Z\)</span>-statistics for a voxel-wise hypothesis test on activation in fMRI experiments .</p>
 <p>The 4D volume of imaging data in  was acquired in an experiment with a repetition time <span class="math inline">\(\text{TR}=3\;\text{s}\)</span>, using both visual and auditory stimuli. The visual stimulus was applied using an on/off pattern for a duration of 60 seconds and the auditory stimulus was applied using an on/off pattern for a duration of 90 seconds. A parametric haemodynamic response function (HRF), with mean <span class="math inline">\(\mu=6\)</span> and standard deviation <span class="math inline">\(\sigma=3\)</span>, is utilized here which is similar to the default values in  . We construct the experimental design and HRF in seconds, perform the convolution and then downsample by a factor of three in order to obtain columns of the design matrix that match the acquisition of the MRI data.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>visual &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>), <span class="dt">each=</span><span class="dv">30</span>, <span class="dt">times=</span><span class="dv">9</span>)</span>
-<span id="cb40-2"><a href="#cb40-2"></a>auditory &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>), <span class="dt">each=</span><span class="dv">45</span>, <span class="dt">times=</span><span class="dv">6</span>)</span>
-<span id="cb40-3"><a href="#cb40-3"></a>hrf &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw"><a href="https://rdrr.io/r/stats/GammaDist.html">dgamma</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>, <span class="dv">4</span>, <span class="dt">scale=</span><span class="fl">1.5</span>))</span>
-<span id="cb40-4"><a href="#cb40-4"></a>hrf0 &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(hrf, <span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="dv">0</span>, <span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(visual)<span class="op">-</span><span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(hrf)))</span>
-<span id="cb40-5"><a href="#cb40-5"></a>visual.hrf &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/convolve.html">convolve</a></span>(hrf0, visual)</span>
-<span id="cb40-6"><a href="#cb40-6"></a>hrf0 &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(hrf, <span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="dv">0</span>, <span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(auditory)<span class="op">-</span><span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(hrf)))</span>
-<span id="cb40-7"><a href="#cb40-7"></a>auditory.hrf &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/convolve.html">convolve</a></span>(hrf0, auditory)</span>
-<span id="cb40-8"><a href="#cb40-8"></a>index &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="dv">3</span>, <span class="dv">540</span>, <span class="dt">by=</span><span class="dv">3</span>)</span>
-<span id="cb40-9"><a href="#cb40-9"></a>visual.hrf &lt;-<span class="st"> </span>visual.hrf[index]</span>
-<span id="cb40-10"><a href="#cb40-10"></a>auditory.hrf &lt;-<span class="st"> </span>auditory.hrf[index]</span></code></pre></div>
+<div class="sourceCode" id="cb40"><html><body><pre class="r"><span class="no">visual</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">0.5</span>,<span class="fl">0.5</span>), <span class="kw">each</span><span class="kw">=</span><span class="fl">30</span>, <span class="kw">times</span><span class="kw">=</span><span class="fl">9</span>)
+<span class="no">auditory</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">0.5</span>,<span class="fl">0.5</span>), <span class="kw">each</span><span class="kw">=</span><span class="fl">45</span>, <span class="kw">times</span><span class="kw">=</span><span class="fl">6</span>)
+<span class="no">hrf</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fu"><a href="https://rdrr.io/r/stats/GammaDist.html">dgamma</a></span>(<span class="fl">1</span>:<span class="fl">15</span>, <span class="fl">4</span>, <span class="kw">scale</span><span class="kw">=</span><span class="fl">1.5</span>))
+<span class="no">hrf0</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="no">hrf</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">visual</span>)-<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">hrf</span>)))
+<span class="no">visual.hrf</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/convolve.html">convolve</a></span>(<span class="no">hrf0</span>, <span class="no">visual</span>)
+<span class="no">hrf0</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="no">hrf</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">auditory</span>)-<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">hrf</span>)))
+<span class="no">auditory.hrf</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/convolve.html">convolve</a></span>(<span class="no">hrf0</span>, <span class="no">auditory</span>)
+<span class="no">index</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">3</span>, <span class="fl">540</span>, <span class="kw">by</span><span class="kw">=</span><span class="fl">3</span>)
+<span class="no">visual.hrf</span> <span class="kw">&lt;-</span> <span class="no">visual.hrf</span>[<span class="no">index</span>]
+<span class="no">auditory.hrf</span> <span class="kw">&lt;-</span> <span class="no">auditory.hrf</span>[<span class="no">index</span>]</pre></body></html></div>
 <p>Figure  depicts the visual and auditory stimuli, convolved with the HRF, in the order of acquisition. The design matrix is then used in a voxel-wise GLM, where the  function in  estimates the parameters in the linear regression. At each voxel <span class="math inline">\(t\)</span>-statistics and their associated <span class="math inline">\(p\)</span>-values are computed for the hypothesis test of no effect for each individual stimulus, along with an <span class="math inline">\(F\)</span>-statistic for the hypothesis test of no effect of any stimuli using the  function.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co">##reduced length due to R package storage limitations</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a>visual.hrf&lt;-visual.hrf[<span class="dv">1</span><span class="op">:</span><span class="dv">64</span>]</span>
-<span id="cb41-3"><a href="#cb41-3"></a>auditory.hrf&lt;-auditory.hrf[<span class="dv">1</span><span class="op">:</span><span class="dv">64</span>]</span>
-<span id="cb41-4"><a href="#cb41-4"></a><span class="co">## background threshold: 10% max intensity</span></span>
-<span id="cb41-5"><a href="#cb41-5"></a>voxel.lsfit &lt;-<span class="st"> </span><span class="cf">function</span>(x, thresh) { <span class="co"># general linear model</span></span>
-<span id="cb41-6"><a href="#cb41-6"></a>  <span class="co">## check against background threshold</span></span>
-<span id="cb41-7"><a href="#cb41-7"></a>  <span class="cf">if</span> (<span class="kw"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(x) <span class="op">&lt;</span><span class="st"> </span>thresh) {</span>
-<span id="cb41-8"><a href="#cb41-8"></a>    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="ot">NA</span>, <span class="dv">5</span>))</span>
-<span id="cb41-9"><a href="#cb41-9"></a>  }</span>
-<span id="cb41-10"><a href="#cb41-10"></a>  <span class="co">## glm</span></span>
-<span id="cb41-11"><a href="#cb41-11"></a>  output &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/lsfit.html">lsfit</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span>(visual.hrf, auditory.hrf), x)</span>
-<span id="cb41-12"><a href="#cb41-12"></a>  <span class="co">## extract t-statistic, p-values</span></span>
-<span id="cb41-13"><a href="#cb41-13"></a>  output.t &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/ls.print.html">ls.print</a></span>(output, <span class="dt">print.it=</span><span class="ot">FALSE</span>)<span class="op">$</span>coef.table[[<span class="dv">1</span>]][<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>,<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>]</span>
-<span id="cb41-14"><a href="#cb41-14"></a>  output.f &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/ls.print.html">ls.print</a></span>(output, <span class="dt">print.it=</span><span class="ot">FALSE</span>)<span class="op">$</span>summary[<span class="dv">3</span>]</span>
-<span id="cb41-15"><a href="#cb41-15"></a>  <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(output.t, <span class="kw"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(output.f))</span>
-<span id="cb41-16"><a href="#cb41-16"></a>}</span>
-<span id="cb41-17"><a href="#cb41-17"></a><span class="co">## apply local glm to each voxel</span></span>
-<span id="cb41-18"><a href="#cb41-18"></a>ffd.glm &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(ffd, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, voxel.lsfit, <span class="dt">thresh=</span><span class="fl">0.1</span> <span class="op">*</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(ffd))</span></code></pre></div>
+<div class="sourceCode" id="cb41"><html><body><pre class="r"><span class="co">##reduced length due to R package storage limitations</span>
+<span class="no">visual.hrf</span><span class="kw">&lt;-</span><span class="no">visual.hrf</span>[<span class="fl">1</span>:<span class="fl">64</span>]
+<span class="no">auditory.hrf</span><span class="kw">&lt;-</span><span class="no">auditory.hrf</span>[<span class="fl">1</span>:<span class="fl">64</span>]
+<span class="co">## background threshold: 10% max intensity</span>
+<span class="no">voxel.lsfit</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">thresh</span>) { <span class="co"># general linear model</span>
+  <span class="co">## check against background threshold</span>
+  <span class="kw">if</span> (<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">x</span>) <span class="kw">&lt;</span> <span class="no">thresh</span>) {
+    <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="fl">NA</span>, <span class="fl">5</span>))
+  }
+  <span class="co">## glm</span>
+  <span class="no">output</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lsfit.html">lsfit</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span>(<span class="no">visual.hrf</span>, <span class="no">auditory.hrf</span>), <span class="no">x</span>)
+  <span class="co">## extract t-statistic, p-values</span>
+  <span class="no">output.t</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/ls.print.html">ls.print</a></span>(<span class="no">output</span>, <span class="kw">print.it</span><span class="kw">=</span><span class="fl">FALSE</span>)$<span class="no">coef.table</span><span class="kw">[[</span><span class="fl">1</span>]][<span class="fl">2</span>:<span class="fl">3</span>,<span class="fl">3</span>:<span class="fl">4</span>]
+  <span class="no">output.f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/ls.print.html">ls.print</a></span>(<span class="no">output</span>, <span class="kw">print.it</span><span class="kw">=</span><span class="fl">FALSE</span>)$<span class="no">summary</span>[<span class="fl">3</span>]
+  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="no">output.t</span>, <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="no">output.f</span>))
+}
+<span class="co">## apply local glm to each voxel</span>
+<span class="no">ffd.glm</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(<span class="no">ffd</span>, <span class="fl">1</span>:<span class="fl">3</span>, <span class="no">voxel.lsfit</span>, <span class="kw">thresh</span><span class="kw">=</span><span class="fl">0.1</span> * <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">ffd</span>))</pre></body></html></div>
 <p>Given the multidimensional array of output from the GLM fitting procedure, the <span class="math inline">\(t\)</span>-statistics are separated and converted into <span class="math inline">\(Z\)</span>-statistics to follow the convention used in . For the purposes of this example we have not applied any multiple comparisons correction procedure and, instead, use a relatively large threshold of <span class="math inline">\(Z&gt;5\)</span> for visualization.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>dof &lt;-<span class="st"> </span><span class="kw"><a href="../reference/miscellaneous.html">ntim</a></span>(ffd) <span class="op">-</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a>Z.visual &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nifti.html">nifti</a></span>(<span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span>(<span class="kw"><a href="https://rdrr.io/r/stats/TDist.html">pt</a></span>(ffd.glm[<span class="dv">1</span>,,,], dof, <span class="dt">log.p=</span><span class="ot">TRUE</span>), <span class="dt">log.p=</span><span class="ot">TRUE</span>),</span>
-<span id="cb42-3"><a href="#cb42-3"></a>                  <span class="dt">datatype=</span><span class="dv">16</span>)</span>
-<span id="cb42-4"><a href="#cb42-4"></a>Z.auditory &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nifti.html">nifti</a></span>(<span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span>(<span class="kw"><a href="https://rdrr.io/r/stats/TDist.html">pt</a></span>(ffd.glm[<span class="dv">2</span>,,,], dof, <span class="dt">log.p=</span><span class="ot">TRUE</span>), <span class="dt">log.p=</span><span class="ot">TRUE</span>),</span>
-<span id="cb42-5"><a href="#cb42-5"></a>                    <span class="dt">datatype=</span><span class="dv">16</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>yrange &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">5</span>, <span class="kw"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(Z.visual, <span class="dt">na.rm=</span><span class="ot">TRUE</span>))</span>
-<span id="cb43-2"><a href="#cb43-2"></a><span class="kw"><a href="../reference/overlay-methods.html">overlay</a></span>(ffd, <span class="kw"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(Z.visual <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span>, Z.visual, <span class="ot">NA</span>), </span>
-<span id="cb43-3"><a href="#cb43-3"></a>        <span class="dt">zlim.x=</span><span class="kw"><a href="https://rdrr.io/r/base/range.html">range</a></span>(ffd)<span class="op">*</span><span class="fl">0.95</span>, <span class="dt">zlim.y=</span>yrange)</span></code></pre></div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>yrange &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">5</span>, <span class="kw"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(Z.auditory, <span class="dt">na.rm=</span><span class="ot">TRUE</span>))</span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="kw"><a href="../reference/overlay-methods.html">overlay</a></span>(ffd, <span class="kw"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(Z.auditory <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span>, Z.auditory, <span class="ot">NA</span>), </span>
-<span id="cb44-3"><a href="#cb44-3"></a>        <span class="dt">zlim.x=</span><span class="kw"><a href="https://rdrr.io/r/base/range.html">range</a></span>(ffd)<span class="op">*</span><span class="fl">0.95</span>, <span class="dt">zlim.y=</span>yrange)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><html><body><pre class="r"><span class="no">dof</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/miscellaneous.html">ntim</a></span>(<span class="no">ffd</span>) - <span class="fl">1</span>
+<span class="no">Z.visual</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nifti.html">nifti</a></span>(<span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span>(<span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">pt</a></span>(<span class="no">ffd.glm</span>[<span class="fl">1</span>,,,], <span class="no">dof</span>, <span class="kw">log.p</span><span class="kw">=</span><span class="fl">TRUE</span>), <span class="kw">log.p</span><span class="kw">=</span><span class="fl">TRUE</span>),
+                  <span class="kw">datatype</span><span class="kw">=</span><span class="fl">16</span>)
+<span class="no">Z.auditory</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nifti.html">nifti</a></span>(<span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span>(<span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">pt</a></span>(<span class="no">ffd.glm</span>[<span class="fl">2</span>,,,], <span class="no">dof</span>, <span class="kw">log.p</span><span class="kw">=</span><span class="fl">TRUE</span>), <span class="kw">log.p</span><span class="kw">=</span><span class="fl">TRUE</span>),
+                    <span class="kw">datatype</span><span class="kw">=</span><span class="fl">16</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb43"><html><body><pre class="r"><span class="no">yrange</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">5</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">Z.visual</span>, <span class="kw">na.rm</span><span class="kw">=</span><span class="fl">TRUE</span>))
+<span class="fu"><a href="../reference/overlay-methods.html">overlay</a></span>(<span class="no">ffd</span>, <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(<span class="no">Z.visual</span> <span class="kw">&gt;</span> <span class="fl">5</span>, <span class="no">Z.visual</span>, <span class="fl">NA</span>),
+        <span class="kw">zlim.x</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span>(<span class="no">ffd</span>)*<span class="fl">0.95</span>, <span class="kw">zlim.y</span><span class="kw">=</span><span class="no">yrange</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb44"><html><body><pre class="r"><span class="no">yrange</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">5</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">Z.auditory</span>, <span class="kw">na.rm</span><span class="kw">=</span><span class="fl">TRUE</span>))
+<span class="fu"><a href="../reference/overlay-methods.html">overlay</a></span>(<span class="no">ffd</span>, <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(<span class="no">Z.auditory</span> <span class="kw">&gt;</span> <span class="fl">5</span>, <span class="no">Z.auditory</span>, <span class="fl">NA</span>),
+        <span class="kw">zlim.x</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span>(<span class="no">ffd</span>)*<span class="fl">0.95</span>, <span class="kw">zlim.y</span><span class="kw">=</span><span class="no">yrange</span>)</pre></body></html></div>
 <p>Statistical images in neuroimaging are commonly displayed as an overlay on top of a reference image (one of the dynamic acquisitions) in order to provide anatomical context. The  command in  allows one to display the statistical image of voxel-wise activations overlayed on one of the original EPI (echo planar imaging) volumes acquired in the fMRI experiment. The 3D array of <span class="math inline">\(Z\)</span>-statistics for the visual and auditory tasks are overlayed on the original data for “anatomical” reference in Figure . The <span class="math inline">\(Z\)</span>-statistics that exceed the threshold appear to match know neuroanatomy, where the visual cortex in the occipital lobe shows activation under the visual stimulus (Figure a) and the primary auditory cortex in the temporal lobe shows activation under the auditory stimulus (Figure b).</p>
 <p>Medical image analysis depends on the efficient manipulation and conversion of DICOM data. The  package has been developed to provide the user with a set of functions that mask as many of the background details as possible while still providing flexible and robust performance.</p>
 <p>The future of medical image analysis in  will benefit from a unified view of the imaging data standards: DICOM, NIfTI, ANALYZE, AFNI, MINC, etc. The existence of a single package for handling imaging data formats would facilitate interoperability between the ever increasing number of  packages devoted to medical image analysis. We do not assume that the data structures in  are best-suited for this purpose and we welcome an open discussion around how best to provide this standardization to the end user.</p>
@@ -286,16 +294,11 @@ Interactive visualization of multi-dimensional arrays, stored in NIfTI or ANALYZ
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
@@ -306,7 +309,7 @@ Interactive visualization of multi-dimensional arrays, stored in NIfTI or ANALYZ
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

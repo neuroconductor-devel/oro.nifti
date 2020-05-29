@@ -155,9 +155,14 @@ setMethod("writeNIfTI", signature(nim="array"),
 
 .writeNIfTI <- function(nim, filename, onefile=TRUE, gzipped=TRUE,
                         verbose=FALSE, warn=-1, compression = 6) {
+
   ## Warnings?
   oldwarn <- getOption("warn")
   options(warn=warn)
+  any_na = anyNA(nim@.Data)
+  if (any_na) {
+    warning("NAs may be turned to NaNs")
+  }  
   #### added so that range of the data will equal cal.min/cal.max
   nim <- calibrateImage(nim)
   ##### Added so that bad dimensions are dropped
@@ -198,6 +203,18 @@ setMethod("writeNIfTI", signature(nim="array"),
       cat("  vox_offset =", nim@"vox_offset", fill=TRUE)
     }
   }
+  ## reorient?
+  if (nim@"reoriented") {
+    data <- as.vector(inverseReorient(nim))
+  } else {
+    data <- as.vector(nim@.Data)
+  }
+  if (any_na) {
+    warning("Need to change bitpix and datatype to FLOAT32 due to NAs")
+    nim@"datatype" = max(16L, nim@datatype)
+    nim@bitpix = max(64L, nim@bitpix)
+  }
+  
   ##
   writeBin(as.integer(nim@"sizeof_hdr"), fid, size=4)
   writeChar(nim@"data_type", fid, nchars=10, eos=NULL)
@@ -270,16 +287,12 @@ setMethod("writeNIfTI", signature(nim="array"),
       stop("@extender set but", nim, "has no extensions.")
     }
   }
-  ## reorient?
-  if (nim@"reoriented") {
-    data <- as.vector(inverseReorient(nim))
-  } else {
-    data <- as.vector(nim@.Data)
-  }
+
   ## Write image file...
   if (verbose) {
     cat("  writing data at byte =", seek(fid), fill=TRUE)
   }
+
   switch(as.character(nim@"datatype"),
          "2" = writeBin(as.integer(data), fid, size=nim@"bitpix"/8),
          "4" = writeBin(as.integer(data), fid, size=nim@"bitpix"/8),
