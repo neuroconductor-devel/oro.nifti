@@ -151,11 +151,11 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
   img <- paste(fname, "img", sep=".")
   imggz <- paste(fname, "img.gz", sep=".")
   ## Check all possible file extensions
-  args = list(fname, 
-              onefile = TRUE, 
+  args = list(fname,
+              onefile = TRUE,
               gzipped = TRUE,
-              verbose = verbose, 
-              warn = warn, 
+              verbose = verbose,
+              warn = warn,
               reorient = reorient,
               call = call,
               # force_extension = force_extension,
@@ -178,7 +178,7 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
       }
       args$onefile = TRUE
       args$gzipped = FALSE
-      nim = do.call(.read.nifti.content, args = args)   
+      nim = do.call(.read.nifti.content, args = args)
     } else {
       if (file.exists(hdrgz) && file.exists(imggz)) {
         ## If compressed files exist, then upload!
@@ -196,7 +196,7 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
           }
           args$onefile = FALSE
           args$gzipped = FALSE
-          nim = do.call(.read.nifti.content, args = args)          
+          nim = do.call(.read.nifti.content, args = args)
         } else {
           stop("File(s) not found!")
         }
@@ -422,6 +422,8 @@ nifti_header <- function(
              "8" = readBin(fid, integer(), n, nim@"bitpix"/8, endian=endian),
              "16" = readBin(fid, double(), n, nim@"bitpix"/8, endian=endian),
              "64" = readBin(fid, double(), n, nim@"bitpix"/8, endian=endian),
+             "256" = readBin(fid, integer(), n, nim@"bitpix"/8, signed=FALSE,
+                             endian=endian),
              "512" = readBin(fid, integer(), n, nim@"bitpix"/8, signed=FALSE,
                              endian=endian),
              "768" = readBin(fid, integer(), n, nim@"bitpix"/8, signed=FALSE,
@@ -580,7 +582,7 @@ readANALYZE <- function(fname, SPM=FALSE, verbose=FALSE, warn=-1) {
   if (file.exists(paste(fname, "hdr", sep=".")) &&
       file.exists(paste(fname, "img", sep="."))) {      
     if (verbose) {
-      cat(paste("  files = ", fname, ".{hdr,img}", sep=""), fill=TRUE)
+      cat(paste0("  files = ", fname, ".{hdr,img}"), fill=TRUE)
     }
     aim <- .read.analyze.content(fname, gzipped=FALSE, SPM=SPM,
                                  verbose=verbose, warn=warn)
@@ -591,7 +593,7 @@ readANALYZE <- function(fname, SPM=FALSE, verbose=FALSE, warn=-1) {
   if (file.exists(paste(fname, "hdr.gz", sep=".")) &&
       file.exists(paste(fname, "img.gz", sep="."))) {      
     if (verbose) {
-      cat(paste("  files = ", fname, ".{hdr.gz,img.gz}", sep=""), fill=TRUE)
+      cat(paste0("  files = ", fname, ".{hdr.gz,img.gz}"), fill=TRUE)
     }
     aim <- .read.analyze.content(fname, gzipped=TRUE, SPM=SPM,
                                  verbose=verbose, warn=warn)
@@ -720,9 +722,8 @@ readANALYZE <- function(fname, SPM=FALSE, verbose=FALSE, warn=-1) {
                                 endian=endian),
                  "64" = readBin(fid, double(), n, aim@"bitpix"/8,
                                 endian=endian),
-                 stop(paste("Data type ", aim@"datatype", " (",
-                            convert.datatype.anlz(aim@"datatype"), 
-                            ") unsupported in", fname, sep="")))
+                 stop(paste0("Data type ", aim@"datatype", " (", convert.datatype.anlz(aim@"datatype"),
+                             ") unsupported in", fname)))
   close(fid)
   dims <- 2:(1+aim@"dim_"[1])
   if (SPM) {
