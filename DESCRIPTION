@@ -5,7 +5,7 @@ Authors@R:
     c(person(given = "Brandon",
              family = "Whitcher",
              role = c("aut", "cre"),
-             email = "bwhitcher@gmail.com"),
+             email = "muschellij2@gmail.com"),
       person(given = "Volker",
              family = "Schmid",
              role = "aut",
@@ -36,7 +36,8 @@ Suggests:
     testthat,
     covr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    rticles
 Imports:
     stats,
     bitops,
@@ -46,8 +47,7 @@ Imports:
     methods,
     utils,
     abind,
-    RNifti (>= 0.9.0),
-    rticles
+    RNifti (>= 0.9.0)
 Enhances: fmri,
     oro.dicom
 License: BSD_3_clause + file LICENSE
