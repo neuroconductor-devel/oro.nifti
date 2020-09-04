@@ -17,7 +17,7 @@
   gzipped = TRUE,
   verbose = FALSE,
   warn = -1,
-  compression = 6
+  compression = 9
 )
 
 \S4method{writeNIfTI}{niftiExtension}(
@@ -27,7 +27,7 @@
   gzipped = TRUE,
   verbose = FALSE,
   warn = -1,
-  compression = 6
+  compression = 9
 )
 
 \S4method{writeNIfTI}{anlz}(
@@ -37,7 +37,7 @@
   gzipped = TRUE,
   verbose = FALSE,
   warn = -1,
-  compression = 6
+  compression = 9
 )
 
 \S4method{writeNIfTI}{array}(
@@ -47,7 +47,7 @@
   gzipped = TRUE,
   verbose = FALSE,
   warn = -1,
-  compression = 6
+  compression = 9
 )
 }
 \arguments{

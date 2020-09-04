@@ -118,15 +118,15 @@ setGeneric("writeNIfTI", function(nim,  ...) standardGeneric("writeNIfTI"))
 #' @export
 #' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="nifti"), 
-	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
-                   warn=-1, compression = 6) {
+          function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
+                   warn=-1, compression = 9) {
             .writeNIfTI(nim, filename, onefile, gzipped, verbose, warn, compression)
           })
 #' @export
 #' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="niftiExtension"), 
           function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
-                   warn=-1, compression = 6) {
+                   warn=-1, compression = 9) {
             # nim = as.nifti(nim)
             msg = paste0(
               "Class is of niftiExtension, extensions",
@@ -138,24 +138,24 @@ setMethod("writeNIfTI", signature(nim="niftiExtension"),
 #' @export
 #' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="anlz"), 
-	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
-                   warn=-1, compression = 6) {
+          function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
+                   warn=-1, compression = 9) {
             .writeNIfTI(as(nim, "nifti"), filename, onefile, gzipped,
                         verbose, warn, compression)
           })
 #' @export
 #' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="array"), 
-	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
+          function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
                    warn=-1,
-	           compression = 6) {
+                   compression = 9) {
             .writeNIfTI(as(nim, "nifti"), filename, onefile, gzipped,
                         verbose, warn, compression)
           })
 
 .writeNIfTI <- function(nim, filename, onefile=TRUE, gzipped=TRUE,
-                        verbose=FALSE, warn=-1, compression = 6) {
-
+                        verbose=FALSE, warn=-1, compression = 9) {
+  
   ## Warnings?
   oldwarn <- getOption("warn")
   options(warn=warn)
@@ -174,10 +174,12 @@ setMethod("writeNIfTI", signature(nim="array"),
   }
   ## Write header file...
   if (gzipped) {
-    fid <- gzfile(paste(filename, "nii.gz", sep="."), "wb",
+    outfile = paste(filename, "nii.gz", sep=".")
+    fid <- gzfile(outfile, "wb",
                   compression = compression)
   } else {
-    fid <- file(paste(filename, "nii", sep="."), "wb")
+    outfile = paste(filename, "nii", sep=".")
+    fid <- file(outfile, "wb")
   }
   ## Extensions...
   extensions <- NULL
@@ -210,9 +212,13 @@ setMethod("writeNIfTI", signature(nim="array"),
     data <- as.vector(nim@.Data)
   }
   if (any_na) {
-    warning("Need to change bitpix and datatype to FLOAT32 due to NAs")
-    nim@"datatype" = max(16L, nim@datatype)
+    warn_them = nim@datatype < 64L
+    nim@"datatype" = max(64L, nim@datatype)
+    warn_them = warn_them | nim@bitpix < 64L
     nim@bitpix = max(64L, nim@bitpix)
+    if (warn_them) {
+      warning("Need to change bitpix and datatype to FLOAT64 due to NAs")
+    } 
   }
   
   ##
@@ -272,39 +278,40 @@ setMethod("writeNIfTI", signature(nim="array"),
                writeBin(as.integer(x@"esize"), fid, size=4)
                writeBin(as.integer(x@"ecode"), fid, size=4)
                ## Write out all the characters in the data section
-	       # writeChar(x@"edata", fid, nchars=nchar(x@"edata"), eos=NULL)
-	       writeChar(x@"edata", fid, nchars=as.integer(x@"esize") - 8, 
-	                 eos=NULL, useBytes = TRUE)
-	       ## add margin to write \0 till 0 mod 16
-	       # margin <- (-(nchar(x@"edata", type="bytes") + 8) %% 16) 
-	       margin <- (-as.integer(x@"esize") %% 16) 
-	       if (margin > 0) {
-		 writeBin(rep("", margin), fid, size=margin)
-	       }
+               # writeChar(x@"edata", fid, nchars=nchar(x@"edata"), eos=NULL)
+               writeChar(x@"edata", fid, nchars=as.integer(x@"esize") - 8, 
+                         eos=NULL, useBytes = TRUE)
+               ## add margin to write \0 till 0 mod 16
+               # margin <- (-(nchar(x@"edata", type="bytes") + 8) %% 16) 
+               margin <- (-as.integer(x@"esize") %% 16) 
+               if (margin > 0) {
+                 writeBin(rep("", margin), fid, size=margin)
+               }
                invisible()
              })
     } else {
       stop("@extender set but", nim, "has no extensions.")
     }
   }
-
+  
   ## Write image file...
   if (verbose) {
     cat("  writing data at byte =", seek(fid), fill=TRUE)
   }
-
+  
+  size = as.integer(nim@"bitpix"/8L)
   switch(as.character(nim@"datatype"),
-         "2" = writeBin(as.integer(data), fid, size=nim@"bitpix"/8),
-         "4" = writeBin(as.integer(data), fid, size=nim@"bitpix"/8),
-         "8" = writeBin(as.integer(data), fid, size=nim@"bitpix"/8),
-         "16" = writeBin(as.double(data), fid, size=nim@"bitpix"/8),
-         "64" = writeBin(as.double(data), fid, size=nim@"bitpix"/8),
-         "512" = writeBin(as.integer(data), fid, size=nim@"bitpix"/8)
-         )
+         "2" = writeBin(as.integer(data), fid, size=size),
+         "4" = writeBin(as.integer(data), fid, size=size),
+         "8" = writeBin(as.integer(data), fid, size=size),
+         "16" = writeBin(as.double(data), fid, size=size),
+         "64" = writeBin(as.double(data), fid, size=size),
+         "512" = writeBin(as.integer(data), fid, size=size)
+  )
   close(fid)
   ## Warnings?
   options(warn=oldwarn)
-  invisible()
+  outfile
 }
 
 ############################################################################
@@ -379,12 +386,12 @@ setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' @export
 #' @rdname write_anlz 
 setMethod("writeANALYZE", signature(aim="anlz"), 
-	  function(aim, filename, gzipped=TRUE, verbose=FALSE, warn=-1,
-	           compression = 6) {
+          function(aim, filename, gzipped=TRUE, verbose=FALSE, warn=-1,
+                   compression = 9) {
             .writeANALYZE(aim, filename, gzipped, verbose, warn, compression)
           })
 .writeANALYZE <- function(aim, filename, gzipped=TRUE, verbose=FALSE,
-                          warn=-1, compression = 6) {
+                          warn=-1, compression = 9) {
   ## Warnings?
   oldwarn <- getOption("warn")
   options(warn=warn)
