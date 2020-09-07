@@ -249,7 +249,7 @@
     \vspace{.1\baselineskip}
     {\fontfamily{pzc} \fontsize{13}{15} \selectfont Journal of Statistical Software}
     \hfill
-    \url{http://www.jstatsoft.org/}\\ \nopagebreak
+    \url{https://www.jstatsoft.org/}\\ \nopagebreak
     published by the Foundation for Open Access Statistics
     \hfill
     \url{http://www.foastat.org/}\\[.3\baselineskip] \nopagebreak

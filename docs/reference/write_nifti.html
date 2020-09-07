@@ -261,12 +261,12 @@ disk.</p></dd> <dt>object = "nifti"</dt><dd><p>Write NIfTI volume to disk.</p></
 
 <span class='no'>fname</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='st'>"test-nifti-image-uint8"</span>)
 
-<span class='fu'>writeNIfTI</span>(<span class='no'>img.nifti</span>, <span class='no'>fname</span>, <span class='kw'>verbose</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;   writing data at byte = 352</div><div class='output co'>#&gt; [1] "/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpHIKvFy/test-nifti-image-uint8.nii.gz"</div><div class='input'><span class='co'>## These files should be viewable in, for example, FSLview</span>
+<span class='fu'>writeNIfTI</span>(<span class='no'>img.nifti</span>, <span class='no'>fname</span>, <span class='kw'>verbose</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;   writing data at byte = 352</div><div class='output co'>#&gt; [1] "/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpkmpsLx/test-nifti-image-uint8.nii.gz"</div><div class='input'><span class='co'>## These files should be viewable in, for example, FSLview</span>
 <span class='co'>## Make sure you adjust the min/max values for proper visualization</span>
-<span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read_nifti.html'>readNIfTI</a></span>(<span class='no'>fname</span>, <span class='kw'>verbose</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;   fname = /var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpHIKvFy/test-nifti-image-uint8
-#&gt;   files = /var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpHIKvFy/test-nifti-image-uint8.nii.gz
+<span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read_nifti.html'>readNIfTI</a></span>(<span class='no'>fname</span>, <span class='kw'>verbose</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;   fname = /var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpkmpsLx/test-nifti-image-uint8
+#&gt;   files = /var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpkmpsLx/test-nifti-image-uint8.nii.gz
 #&gt;   nii   = 
-#&gt; /var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpHIKvFy/test-nifti-image-uint8.nii.gz
+#&gt; /var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpkmpsLx/test-nifti-image-uint8.nii.gz
 #&gt;   vox_offset = 352
 #&gt;   seek(fid) = 352
 #&gt;  # reorient = Method 1
