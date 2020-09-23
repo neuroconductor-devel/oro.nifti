@@ -1,5 +1,5 @@
 \documentclass[
-]{article}
+]{jss}
 
 \usepackage[utf8]{inputenc}
 
@@ -7,7 +7,9 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \author{
-Brandon Whitcher\\Pfizer Worldwide R\&D \And Volker J. Schmid\\Ludwig-Maximilians Universit"at M"unchen \And Andrew Thornton\\Cardiff University
+Brandon Whitcher\\Pfizer Worldwide R\&D \And Volker J.
+Schmid\\Ludwig-Maximilians Universit"at M"unchen \And Andrew
+Thornton\\Cardiff University
 }
 \title{Working with the NIfTI Data Standard in \proglang{R}}
 
@@ -45,10 +47,11 @@ visualization.
     Brandon Whitcher\\
   Pfizer Worldwide R\&D\\
   Pfizer Worldwide Research \& Development 610 Main Street Cambridge, MA
-  02139, United States\\
+02139, United States\\
   E-mail: \email{bwhitcher@gmail.com}\\
   URL: \url{http://www.imperial.ac.uk/people/b.whitcher}\\~\\
       }
+
 
 % Pandoc header
 
@@ -59,7 +62,7 @@ visualization.
 \begin{CodeChunk}
 
 \begin{CodeOutput}
-oro.nifti 0.10.1
+oro.nifti 0.11.0
 \end{CodeOutput}
 \end{CodeChunk}
 
@@ -287,8 +290,8 @@ specify the slice.
 \begin{figure}[tbp]
   \begin{center}
     \begin{tabular}{cc}
-      \includegraphics*[width=0.45\textwidth]{mniLR.jpeg} &
-      \includegraphics*[width=0.45\textwidth]{mniRL.jpeg}\\
+      \includegraphics*[width=0.45\textwidth]{/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpeBGkJd/mniLR.jpeg} &
+      \includegraphics*[width=0.45\textwidth]{/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpeBGkJd/mniRL.jpeg}\\
       \textbf{(a)} & \textbf{(b)}
     \end{tabular}
   \end{center}
@@ -346,7 +349,7 @@ is looking at the subject.
 
 \begin{figure}[tbp]
   \begin{center}
-    \includegraphics*[width=0.65\textwidth]{mniRL_orthographic.jpeg}
+    \includegraphics*[width=0.65\textwidth]{/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpeBGkJd/mniRL_orthographic.jpeg}
     \end{center}
   \caption{Orthographic display of the MNI volume \code{mniRL\_nifti}.
     By default the mid-axial, mid-sagittal and mid-coronal planes are
@@ -530,11 +533,25 @@ stored as standard \code{.nii} files or compressed with gnuzip
 
 \begin{CodeInput}
 R> writeNIfTI(random.image, "random")
+\end{CodeInput}
+
+\begin{CodeOutput}
+[1] "random.nii.gz"
+\end{CodeOutput}
+
+\begin{CodeInput}
 R> list.files(pattern="random")
 \end{CodeInput}
 
 \begin{CodeOutput}
 [1] "random.nii.gz"
+\end{CodeOutput}
+\end{CodeChunk}
+
+\begin{CodeChunk}
+
+\begin{CodeOutput}
+[1] TRUE
 \end{CodeOutput}
 \end{CodeChunk}
 
@@ -634,9 +651,9 @@ ANALYZE/NIfTI data using a \proglang{Tcl}/\proglang{Tk} interface
 \begin{figure}[tbp]
   \begin{center}
     \begin{tabular}{c}
-      \includegraphics*[width=0.6\textwidth]{ffd.jpeg}\\
+      \includegraphics*[width=0.6\textwidth]{/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpeBGkJd/ffd.jpeg}\\
       \textbf{(a)}\\
-      \includegraphics*[width=0.6\textwidth]{ffd_orthographic.jpeg}\\
+      \includegraphics*[width=0.6\textwidth]{/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpeBGkJd/ffd_orthographic.jpeg}\\
       \textbf{(b)}
     \end{tabular}
   \end{center}
@@ -718,7 +735,7 @@ experiments \citep{fri-etal:spms,fri-etal:revisited}.
 
 \begin{figure}[tbp]
   \begin{center}
-    \includegraphics*[width=\textwidth]{ffd_design.jpeg}
+    \includegraphics*[width=\textwidth]{/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpeBGkJd/ffd_design.jpeg}
     \end{center}
   \caption{Visual (30 seconds on/off) and auditory (45 seconds on/off)
     stimuli, convolved with a parametric haemodynamic response
@@ -791,9 +808,9 @@ R> ffd.glm <- apply(ffd, 1:3, voxel.lsfit, thresh=0.1 * max(ffd))
 \begin{figure}[tbp]
   \begin{center}
     \begin{tabular}{c}
-      \includegraphics*[width=0.6\textwidth]{ffd_zstat1.jpeg}\\
+      \includegraphics*[width=0.6\textwidth]{/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpeBGkJd/ffd_zstat1.jpeg}\\
       \textbf{(a)}\\
-      \includegraphics*[width=0.6\textwidth]{ffd_zstat2.jpeg}\\
+      \includegraphics*[width=0.6\textwidth]{/var/folders/1s/wrtqcpxn685_zk570bnx9_rr0000gr/T//RtmpeBGkJd/ffd_zstat2.jpeg}\\
       \textbf{(b)}
     \end{tabular}
   \end{center}
@@ -886,4 +903,3 @@ supported by the German Research Council (DFG SCHM 2747/1-1).
 
 
 \end{document}
-
