@@ -1,5 +1,5 @@
 Package: oro.nifti
-Version: 0.10.3
+Version: 0.11.0
 Title: Rigorous - 'NIfTI' + 'ANALYZE' + 'AFNI' : Input / Output
 Authors@R: 
     c(person(given = "Brandon",
@@ -36,7 +36,8 @@ Suggests:
     testthat,
     covr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    rticles
 Imports:
     stats,
     bitops,
@@ -46,8 +47,7 @@ Imports:
     methods,
     utils,
     abind,
-    RNifti (>= 0.9.0),
-    rticles
+    RNifti (>= 0.9.0)
 Enhances: fmri,
     oro.dicom
 License: BSD_3_clause + file LICENSE
@@ -164,6 +164,5 @@ Collate:
     'img_length.R'
     'zzz.R'
     'zzz_niftiImage.R'
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Encoding: UTF-8
-

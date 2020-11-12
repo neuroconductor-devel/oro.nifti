@@ -1,4 +1,5 @@
 ---
+documentclass: jss 
 author:
   - name: Brandon Whitcher
     affiliation: "Pfizer Worldwide R&D"

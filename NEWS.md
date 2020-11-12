@@ -1,3 +1,9 @@
+# oro.nifti 0.11.0
+
+* Re-fixed the bug when there were `NA` values.
+* Compression is now `9` instead of `6`.
+* `writeNIfTI` now returns the file name of the file written.
+
 # oro.nifti 0.10.3
 
 * Fixing when there are any `NA` values.
