@@ -5,4 +5,4 @@
 ![CRAN Downloads Badge](http://cranlogs.r-pkg.org/badges/grand-total/oro.nifti)
 ![CRAN Downloads Badge](http://cranlogs.r-pkg.org/badges/oro.nifti)
 
-The R package **oro.nifti** contains functions for the input/output and visualization of medical imaging data that follow either the ANALYZE, NIfTI or AFNI formats.  This package is part of the <a href="http://rigorousanalytics.blogspot.com">Rigorous Analytics</a> bundle.
+The R package **oro.nifti** contains functions for the input/output and visualization of medical imaging data that follow either the ANALYZE, NIfTI or AFNI formats.  This package is part of the [Rigorous Analytics](https://rigorousanalytics.blogspot.com) bundle.
