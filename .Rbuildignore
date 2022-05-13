@@ -19,3 +19,4 @@ revdep/*
 ^appveyor\.yml$
 ^vignettes/*\.jpeg$
 ^vignettes/*\.nii\.gz$
+^CRAN-SUBMISSION$
