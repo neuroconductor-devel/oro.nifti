@@ -1,3 +1,7 @@
+# oro.nifti 0.11.1
+
+* Fixed a length 1 logical condition issue that affected `neurobase` when plotting.
+
 # oro.nifti 0.11.0
 
 * Re-fixed the bug when there were `NA` values.
