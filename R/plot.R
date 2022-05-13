@@ -69,10 +69,10 @@ image.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
   Z <- nsli(x)
   W <- ntim(x)
   ## check dimensions
-  if (is.na(X) || is.na(Y)) {
+  if (all(is.na(X)) || all(is.na(Y))) {
     stop("Missing rows/columns in NIfTI volume.")
   }
-  if (! is.na(Z)) {
+  if (!all(is.na(Z))) {
     if (z < 1 || z > Z) {
       stop("slice \"z\" out of range")
     }
@@ -103,11 +103,11 @@ image.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
   ## plotting
   oldpar <- par(no.readonly=TRUE)
   par(mfrow=ceiling(rep(sqrt(lz),2)), oma=oma, mar=mar, bg=bg)
-  if (is.na(Z)) { # two-dimensional matrix
+  if (all(is.na(Z))) { # two-dimensional matrix
     graphics::image(1:X, 1:Y, x, col=col, breaks=breaks, asp=aspect,
                     axes=axes, xlab=xlab, ylab=ylab, ...)
   } else {
-    if (is.na(W)) { # three-dimensional array
+    if (all(is.na(W))) { # three-dimensional array
       for (z in index) {
         graphics::image(1:X, 1:Y, x[,,z], col=col, breaks=breaks,
                         asp=aspect, axes=axes, xlab=xlab, ylab=ylab, ...)
@@ -295,7 +295,7 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
   X <- nrow(x)
   Y <- ncol(x)
   Z <- nsli(x)
-  if (is.na(Z)) Z = 1
+  if (all(is.na(Z))) Z = 1
   W <- ntim(x)
   ## check dimensions
   if (X == 0 || Y == 0 || Z == 0) {
@@ -345,7 +345,7 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
       y = array(y, dim = c(dim(y), 1))
     }
   }  
-  if (is.na(W)) { # three-dimensional array
+  if (all(is.na(W))) { # three-dimensional array
     for (z in index) {
       graphics::image(1:X, 1:Y, x[,,z], col=col.x, breaks=breaks.x,
                       zlim=zlim.x, asp=aspect, axes=axes, xlab=xlab,
@@ -536,7 +536,7 @@ orthographic.nifti <- function(x, y=NULL, xyz=NULL, w=1, col=gray(0:64/64),
   }
   oldpar <- par(no.readonly=TRUE)
   par(mfrow=c(2,2), oma=oma, mar=mar, bg=bg)
-  if (is.na(W)) {
+  if (all(is.na(W))) {
     ## Three-dimensional array
     graphics::image(1:X, 1:Z, x[,xyz[2],], col=col, zlim=zlim, breaks=breaks,
                     asp=x@pixdim[4]/x@pixdim[2],
