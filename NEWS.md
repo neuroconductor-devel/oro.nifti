@@ -1,6 +1,10 @@
+# oro.nifti 0.11.2
+
+* Fixed a length 1 logical condition in `image` issue that affected `neurobase` when plotting.
+
 # oro.nifti 0.11.1
 
-* Fixed a length 1 logical condition issue that affected `neurobase` when plotting.
+* Fixed a length 1 logical condition issue in `ortho2` that affected `neurobase` when plotting.
 
 # oro.nifti 0.11.0
 

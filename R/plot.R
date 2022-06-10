@@ -113,7 +113,7 @@ image.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
                         asp=aspect, axes=axes, xlab=xlab, ylab=ylab, ...)
       }
     } else { # four-dimensional array
-      if (w < 1 || w > W)
+      if (any(w < 1 || w > W))
         stop("volume \"w\" out of range")
       for (z in index) {
         graphics::image(1:X, 1:Y, x[,,z,w], col=col, breaks=breaks,
@@ -333,7 +333,7 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
     index <- z
   }
   lz <- length(index)
-  if (z < 1 || z > Z) {
+  if (any(z < 1 || z > Z)) {
     stop("slice \"z\" out of range")
   }
   oldpar <- par(no.readonly=TRUE)
@@ -355,7 +355,7 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
       }
     }
   } else { # four-dimensional array
-    if (w < 1 || w > W) {
+    if (any(w < 1 || w > W)) {
       stop("volume \"w\" out of range")
     }
     for (z in index) {
@@ -567,7 +567,7 @@ orthographic.nifti <- function(x, y=NULL, xyz=NULL, w=1, col=gray(0:64/64),
     }
   } else {
     ## Four-dimensional array    
-    if (w < 1 || w > W) {
+    if (any(w < 1 || w > W)) {
       stop("volume \"w\" out of range")
     }
     graphics::image(1:X, 1:Z, x[,xyz[2],,w], col=col, breaks=breaks,
