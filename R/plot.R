@@ -73,7 +73,7 @@ image.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
     stop("Missing rows/columns in NIfTI volume.")
   }
   if (!all(is.na(Z))) {
-    if (z < 1 || z > Z) {
+    if (any(z < 1 || z > Z)) {
       stop("slice \"z\" out of range")
     }
   } else {
