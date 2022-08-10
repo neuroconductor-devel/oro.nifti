@@ -1,5 +1,5 @@
 Package: oro.nifti
-Version: 0.11.2
+Version: 0.11.4
 Title: Rigorous - 'NIfTI' + 'ANALYZE' + 'AFNI' : Input / Output
 Authors@R: 
     c(person(given = "Brandon",

@@ -73,7 +73,7 @@ image.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
     stop("Missing rows/columns in NIfTI volume.")
   }
   if (!all(is.na(Z))) {
-    if (z < 1 || z > Z) {
+    if (any(z < 1 | z > Z)) {
       stop("slice \"z\" out of range")
     }
   } else {
@@ -113,7 +113,7 @@ image.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
                         asp=aspect, axes=axes, xlab=xlab, ylab=ylab, ...)
       }
     } else { # four-dimensional array
-      if (any(w < 1 || w > W))
+      if (any(w < 1 | w > W))
         stop("volume \"w\" out of range")
       for (z in index) {
         graphics::image(1:X, 1:Y, x[,,z,w], col=col, breaks=breaks,
@@ -333,7 +333,7 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
     index <- z
   }
   lz <- length(index)
-  if (any(z < 1 || z > Z)) {
+  if (any(z < 1 | z > Z)) {
     stop("slice \"z\" out of range")
   }
   oldpar <- par(no.readonly=TRUE)
@@ -355,7 +355,7 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
       }
     }
   } else { # four-dimensional array
-    if (any(w < 1 || w > W)) {
+    if (any(w < 1 | w > W)) {
       stop("volume \"w\" out of range")
     }
     for (z in index) {
@@ -489,6 +489,16 @@ setMethod("overlay", signature(x="afni", y="array"),
 #' @keywords methods
 #' @export
 #' @rdname orthographic-methods
+#' @examples 
+#' fname = system.file(
+#' file.path("nifti", "mniRL.nii.gz"),
+#' package = "oro.nifti")
+#' eve = readNIfTI(fname)
+#' orthographic(eve)
+#' 
+#' image(eve, z = 45)
+#' image(eve, z = 45, plot.type = "single")
+#' image(eve, z = c(45, 50), plot.type = "single")
 orthographic.nifti <- function(x, y=NULL, xyz=NULL, w=1, col=gray(0:64/64),
                                col.y=hotmetal(), zlim=NULL, zlim.y=NULL,
                                crosshairs=TRUE, col.crosshairs="red", 
@@ -567,7 +577,7 @@ orthographic.nifti <- function(x, y=NULL, xyz=NULL, w=1, col=gray(0:64/64),
     }
   } else {
     ## Four-dimensional array    
-    if (any(w < 1 || w > W)) {
+    if (any(w < 1 | w > W)) {
       stop("volume \"w\" out of range")
     }
     graphics::image(1:X, 1:Z, x[,xyz[2],,w], col=col, breaks=breaks,

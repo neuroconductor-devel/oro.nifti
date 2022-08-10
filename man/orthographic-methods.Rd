@@ -144,6 +144,17 @@ for \code{x}.} \item{x = "anlz"}{Produce orthographic display for \code{x}.}
 "nifti"}{Produce orthographic display for \code{x}.} }
 }
 
+\examples{
+fname = system.file(
+file.path("nifti", "mniRL.nii.gz"),
+package = "oro.nifti")
+eve = readNIfTI(fname)
+orthographic(eve)
+
+image(eve, z = 45)
+image(eve, z = 45, plot.type = "single")
+image(eve, z = c(45, 50), plot.type = "single")
+}
 \seealso{
 \code{\link{image-methods}}, \code{\link{overlay-methods}}
 }
