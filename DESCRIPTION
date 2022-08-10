@@ -1,31 +1,14 @@
 Package: oro.nifti
-Version: 0.11.3
+Version: 0.11.4
 Title: Rigorous - 'NIfTI' + 'ANALYZE' + 'AFNI' : Input / Output
-Authors@R: 
-    c(person(given = "Brandon",
-             family = "Whitcher",
-             role = c("aut", "cre"),
-             email = "bwhitcher@gmail.com"),
-      person(given = "Volker",
-             family = "Schmid",
-             role = "aut",
-             email = "volker.schmid@lmu.de"),
-      person(given = "Andrew",
-             family = "Thornton",
-             role = "aut",
-             email = "zeripath@gmail.com"),
-      person(given = "Karsten",
-             family = "Tabelow",
-             role = "ctb",
-             email = "karsten.tabelow@wias-berlin.de"),
-      person(given = "Jon",
-             family = "Clayden",
-             role = "ctb",
-             email = "code@clayden.org"),
-      person(given = "John",
-             family = "Muschelli",
-             role = "aut",
-             email = "muschellij2@gmail.com"))
+Authors@R: c(
+    person("Brandon", "Whitcher", , "muschellij2@gmail.com", role = c("aut", "cre")),
+    person("Volker", "Schmid", , "volker.schmid@lmu.de", role = "aut"),
+    person("Andrew", "Thornton", , "zeripath@gmail.com", role = "aut"),
+    person("Karsten", "Tabelow", , "karsten.tabelow@wias-berlin.de", role = "ctb"),
+    person("Jon", "Clayden", , "code@clayden.org", role = "ctb"),
+    person("John", "Muschelli", , "muschellij2@gmail.com", role = "aut")
+  )
 Description: Functions for the input/output and visualization of
     medical imaging data that follow either the 'ANALYZE', 'NIfTI' or 'AFNI'
     formats.  This package is part of the Rigorous Analytics bundle.
