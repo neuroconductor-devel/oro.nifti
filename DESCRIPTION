@@ -1,5 +1,5 @@
 Package: oro.nifti
-Version: 0.11.4
+Version: 0.11.3
 Title: Rigorous - 'NIfTI' + 'ANALYZE' + 'AFNI' : Input / Output
 Authors@R: 
     c(person(given = "Brandon",
@@ -53,8 +53,6 @@ Enhances: fmri,
 License: BSD_3_clause + file LICENSE
 BugReports: https://github.com/bjw34032/oro.nifti/issues
 URL: https://rigorousanalytics.blogspot.com
-LazyData: true
-LazyDataCompression: gzip
 Collate:
     'auditTrail.R'
     'niftiS4.R'
@@ -163,5 +161,5 @@ Collate:
     'img_length.R'
     'zzz.R'
     'zzz_niftiImage.R'
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Encoding: UTF-8

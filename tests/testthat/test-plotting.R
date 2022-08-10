@@ -12,4 +12,5 @@ testthat::test_that("multiplication works", {
   testthat::expect_silent(image(eve, z = 45))
   testthat::expect_silent(image(eve, z = 45, plot.type = "single"))
   testthat::expect_silent(image(eve, z = c(45, 50), plot.type = "single"))
+  testthat::expect_silent(slice(eve, z = c(45, 50)))
 })
