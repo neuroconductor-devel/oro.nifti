@@ -1,5 +1,5 @@
 Package: oro.nifti
-Version: 0.11.4
+Version: 0.11.5
 Title: Rigorous - 'NIfTI' + 'ANALYZE' + 'AFNI' : Input / Output
 Authors@R: c(
     person("Brandon", "Whitcher", , "bwhitcher@gmail.com", role = c("aut", "cre")),
@@ -144,5 +144,5 @@ Collate:
     'img_length.R'
     'zzz.R'
     'zzz_niftiImage.R'
-RoxygenNote: 7.2.1
 Encoding: UTF-8
+RoxygenNote: 7.3.2

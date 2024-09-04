@@ -311,7 +311,10 @@ setValidity("nifti", function(object) {
   }
   ## dim should be one for all >dim[1] dimensions
   if (! all(object@"dim_"[(max(indices) + 1):8] == 1)) {
-    retval <- c(retval, "all dim elements > dim[1] must be 1\n")
+    retval <- c(retval, paste0(
+      "all dim elements in object@dim_ > dim[1] must be 1, ", 
+      "run dropImageDimension\n")
+    )
   }
   ## number of data dimensions should match dim[1]
   if (length(indices) != length(dim(object@.Data))) {
